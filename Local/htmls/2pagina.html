@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="site.css">
+    <title>Prontuário Criado</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Prontuário Médico Criado</h1>
+        <p><strong>ID do Registro:</strong> {{ record['record_id'] }}</p>
+        <p><strong>Data:</strong> {{ record['date'] }}</p>
+        <p><strong>Nome do Paciente:</strong> {{ record['patient']['name'] }}</p>
+        <p><strong>Doença Prevista:</strong> {{ record['consultation']['predicted_disease'] }}</p>
+        <p><strong>Confiança:</strong> {{ record['consultation']['confidence'] }}</p>
+        <a href="pagina.html">Cadastrar Novo Prontuário</a>
+    </div>
+</body>
+</html>

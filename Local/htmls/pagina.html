@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="site.css">
+    <title>Cadastro de Prontuário Médico</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro de Prontuário Médico</h1>
+        <form action="/create_record" method="POST">
+            <label for="name">Nome do Paciente:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="age">Idade do Paciente:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="gender">Gênero do Paciente:</label>
+            <select id="gender" name="gender" required>
+                <option value="M">Masculino</option>
+                <option value="F">Feminino</option>
+            </select>
+
+            <label for="contact">Contato do Paciente:</label>
+            <input type="text" id="contact" name="contact" required>
+
+            <label>Sintomas do Paciente:</label>
+            <div>
+                {% for symptom in mrs.symptoms %}
+                    <input type="checkbox" name="symptoms" value="{{ symptom }}">{{ symptom }}<br>
+                {% endfor %}
+            </div>
+
+            <label for="observations">Observações:</label>
+            <textarea id="observations" name="observations" required></textarea>
+
+            <input type="submit" value="Criar Prontuário">
+        </form>
+    </div>
+</body>
+</html>
